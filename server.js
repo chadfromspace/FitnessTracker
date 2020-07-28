@@ -48,15 +48,6 @@ app.get("/exercise?", (req, res) => {
         res.json(err);
       });
 });
-//app.get("/workouts", (req, res) => {
-//  db.workout.find({})
-//    .then(dbWorkouts => {
-//      res.dbWorkouts;
-//    })
-//    .catch(err => {
-//      res.json(err);
-//    });
-//});
 app.get("/api/workouts/", (req, res) => {
   db.workouts.find({})
       .then(dbWorkouts => {
@@ -65,6 +56,12 @@ app.get("/api/workouts/", (req, res) => {
       .catch(err => {
         res.json(err);
       });
+});
+app.get("/stats", (req, res) => {
+  try{res.sendFile(path.join(__dirname + "/public/stats.html"))}
+    catch(err) {
+      res.status(400).json(err);
+    };
 });
 app.put("/api/workouts/:id", (req, res) => {
   db.workouts.findByIdAndUpdate(req.params.id, {$push:{exercises:req.body}})
@@ -84,12 +81,14 @@ app.post("/api/workouts", (req, res) => {
           res.json(err);
         });
 });
-
-app.get("/stats", (req, res) => {
-  try{res.sendFile(path.join(__dirname + "/public/stats.html"))}
-    catch(err) {
-      res.status(400).json(err);
-    };
+app.get("/api/workouts/range", (req, res) => {
+  db.workouts.find({})
+      .then(dbWorkouts => {
+        res.json(dbWorkouts);
+      })
+      .catch(err => {
+        res.json(err);
+      });
 });
 
 app.listen(PORT, () => {
