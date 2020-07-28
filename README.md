@@ -8,6 +8,8 @@
 
    ![IMG](./public/img/img.png)
    
+   [Github Repo](https://github.com/chadfromspace/FitnessTracker)
+   
    [Website](https://ancient-fortress-47484.herokuapp.com)
 
   ## Table of Contents
