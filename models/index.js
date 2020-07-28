@@ -1,4 +1,3 @@
 module.exports = {
-  workouts: require("./workout.js"),
-  exercises: require("./exercise.js")
+  workouts: require("./workout.js")
 };
