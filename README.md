@@ -8,7 +8,7 @@
 
    ![IMG](./public/img/img.png)
    
-   ![Site:](https://ancient-fortress-47484.herokuapp.com)
+   [Website](https://ancient-fortress-47484.herokuapp.com)
 
   ## Table of Contents
 
